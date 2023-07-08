@@ -1,0 +1,2004 @@
+@charset "UTF-8";
+@import url("http://fonts.cdnfonts.com/css/akrobat");
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: url(../font/Gilroy-Bold.ttf);
+}
+@font-face {
+  font-family: Gilroy-2;
+  src: url(../font/Gilroy-Regular.ttf);
+}
+@font-face {
+  font-family: Gilroy-3;
+  src: url(../font/TT-Norms-Pro-ExtraLight.otf);
+}
+@font-face {
+  font-family: TT Norms Pro;
+  src: url(../font/TT-Norms-Pro-ExtraLight.otf);
+}
+#app {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: none;
+}
+
+html, body {
+  cursor: none !important;
+}
+
+body * {
+  cursor: none !important;
+}
+@keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.music-player {
+  font-family: "Spotify Circular", sans-serif;
+  position: absolute;
+  top: 24rem;
+  left: 45rem;
+  width: 18.75rem;
+  height: 18.75rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  animation-name: zoomInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.cover-image {
+  width: 100%;
+  height: 13rem;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(29, 185, 84, 0.5);
+  transition: box-shadow 0.5s ease;
+}
+
+.cover-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.1rem;
+}
+
+.control-button {
+  padding: 0.2rem;
+  background-color: transparent;
+  color: #1DB954;
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.control-button:hover {
+  cursor: none !important;
+  color: #ffffff;
+}
+
+.control-button i {
+  font-size: 1.2rem;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 80%;
+  margin-top: 2rem;
+}
+
+.track-title,
+.track-label {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.track-label {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+audio {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.keylist {
+  position: absolute;
+  top: 10rem;
+  left: 58rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.keylist > p {
+  position: absolute;
+  width: 9.1875rem;
+  height: 1.0625rem;
+  right: 51rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8877rem;
+  line-height: 1.0625rem;
+  color: #FFFFFF;
+  transform: rotate(-90deg);
+}
+.keylist > h1 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 0.4rem;
+  right: 51.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f1 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 45.6rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f2 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 42.7rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f3 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 39.85rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f4 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 36.85rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f5 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 32.6rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f6 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 29.6rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f7 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 26.7rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f8 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 23.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f9 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 19.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f10 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 16.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f11 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 13.6rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f12 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 10.75rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .print {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 6.7rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .lock {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 3.75rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .pause {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 1rem;
+  right: 1.12rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .ins {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.1rem;
+  right: 6.45rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .hm {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.1rem;
+  right: 3.55rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .pgup {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.1rem;
+  right: 0.95rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .del {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.2rem;
+  right: 6.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .end {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.2rem;
+  right: 3.75rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .end {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.2rem;
+  right: 3.75rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .pgdn {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.2rem;
+  right: 0.97rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .trnk {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.75rem;
+  right: 51rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .yandan {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 3.5rem;
+  right: 51.1rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .one {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 48.25rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .two {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 45.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .three {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 42.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .four {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 39.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .five {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 36.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .six {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 33.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .sevin {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 30.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .eyt {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 27.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .nine {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 24.85rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .ten {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 22.1rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .eleven {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 19rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .twelve {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 16.2rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .backspace {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 4.2rem;
+  right: 13.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .tab {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.5rem;
+  right: 51.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .capslock {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.65rem;
+  right: 51.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .shift {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.65rem;
+  right: 51.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .ctrl {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 51.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .win {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 46.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .alt {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 43.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .space {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 40.6rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .alt2 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 20.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .win2 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 17.3rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .ctrl2 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 16.9rem;
+  right: 12rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .z {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 43.55rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .x {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 40.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .c {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 37.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .v {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 34.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #000000;
+}
+.keylist .b {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 31.85rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .n {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 28.99rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .m {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 26.1rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .left {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 23rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .right {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 19.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .soru {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 17.1rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .shift2 {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 13.5rem;
+  right: 12.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .a {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 43.55rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .s {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 40.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .d {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 37.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .f {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 34.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .g {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 31.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .h {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 28.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #000000;
+}
+.keylist .j {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 25.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #ffffff;
+}
+.keylist .l {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 22.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #000000;
+}
+.keylist .ikinokta {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 19.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #ffffff;
+}
+.keylist .virgül {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 16.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #ffffff;
+}
+.keylist .enter {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 10.45rem;
+  right: 13.25rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #ffffff;
+}
+.keylist .q {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 43.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .w {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 40.8rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .e {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 37.65rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #000000;
+}
+.keylist .r {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 34.75rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .t {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 31.75rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .y {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 28.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .u {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 26rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .ı {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 22.9rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .o {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 20.2rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .p {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 17.2rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .ğ {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 14.3rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+.keylist .remove {
+  position: absolute;
+  width: 1.625rem;
+  height: 1rem;
+  top: 7.25rem;
+  right: 11.3rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+}
+
+.settings {
+  position: absolute;
+  top: 58.1rem;
+  left: 5.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.settings > p {
+  position: absolute;
+  width: 15.375rem;
+  text-align: center;
+  height: 0.875rem;
+  right: 0.1rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: #FFFFFF;
+  z-index: 1;
+}
+
+.keyboard {
+  position: absolute;
+  top: 58.1rem;
+  left: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.keyboard > p {
+  position: absolute;
+  width: 3.375rem;
+  height: 0.875rem;
+  right: 6.1rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: #FFFFFF;
+}
+
+#cursor {
+  position: absolute;
+  width: 1.945rem;
+  height: 1.485rem;
+  position: fixed;
+  transform: translate(-30%, -10%);
+  pointer-events: none;
+  background-image: url("../img/cursor.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 9999;
+}
+#cursor::before, #cursor::after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  box-shadow: inherit;
+}
+#cursor::before {
+  width: 20px;
+  height: 2px;
+  left: -9px;
+  top: 9px;
+}
+
+.our-text {
+  position: absolute;
+  width: 2.1875rem;
+  height: 7.9375rem;
+  left: 5.1rem;
+  top: 26.3rem;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.our-text > h1 {
+  position: absolute;
+  width: 5.6875rem;
+  height: 1.0625rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8877rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+  transform: rotate(-90deg);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.our-text .gallery {
+  position: absolute;
+  width: 2.1875rem;
+  height: 7.9375rem;
+  left: 0rem;
+  top: 9rem;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.our-text .gallery > h1 {
+  position: absolute;
+  width: 5.75rem;
+  height: 1.0625rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8877rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  transform: rotate(-90deg);
+}
+.our-text .updates {
+  position: absolute;
+  width: 2.1875rem;
+  height: 12.8rem;
+  left: 0rem;
+  top: 18.1rem;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.our-text .updates > h1 {
+  position: absolute;
+  width: 10.75rem;
+  height: 1.0625rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8877rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  transform: rotate(-90deg);
+}
+
+::-webkit-scrollbar {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.notification {
+  box-sizing: border-box;
+  position: absolute;
+  width: 56.75rem;
+  height: 10.375rem;
+  left: 58.2rem;
+  top: 33.75rem;
+  border: 0.346457px solid rgba(255, 255, 255, 0.15);
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.notification .icon {
+  position: absolute;
+  top: -2.9rem;
+  right: 42.6rem;
+}
+.notification .icon > h1 {
+  position: absolute;
+  width: 8.4375rem;
+  height: 0.9375rem;
+  top: 6.5rem;
+  left: 12rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 0.9375rem;
+  color: #FFFFFF;
+}
+.notification .icon > p {
+  position: absolute;
+  width: 20.4375rem;
+  height: 0.9375rem;
+  top: 7.3rem;
+  left: 12rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 0.9375rem;
+  color: #FFFFFF;
+}
+
+.commands {
+  position: absolute;
+  width: 2.1875rem;
+  height: 18.1875rem;
+  left: 58.125rem;
+  top: 45.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.commands > h1 {
+  position: absolute;
+  width: 11.1875rem;
+  height: 1.0625rem;
+  top: 6rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8877rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+  transform: rotate(-90deg);
+}
+
+.helpcommand {
+  position: absolute;
+  height: 19rem;
+  width: 50rem;
+  overflow-y: auto;
+  top: 44.6rem;
+  left: 61rem;
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.helpcommand .list {
+  position: relative;
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.helpcommand .list > h1 {
+  position: absolute;
+  width: 4rem;
+  height: 1.1875rem;
+  font-family: "TT Norms Pro";
+  left: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 1.1875rem;
+  text-align: center;
+  background: radial-gradient(93.42% 93.42% at 50% 50%, #4AB3FF 0%, rgba(74, 179, 255, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.helpcommand .list > p {
+  position: absolute;
+  width: 20.5625rem;
+  height: 0.875rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.images {
+  position: absolute;
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 38rem;
+  height: 10rem;
+  left: 7rem;
+  top: 35.3rem;
+}
+.images .border {
+  position: relative;
+  width: 11.4375rem;
+  display: inline-block;
+  height: 7.9375rem;
+  margin-left: 1rem;
+  background-image: url("../img/i-border.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.images .border .data {
+  position: absolute;
+  width: 10.0625rem;
+  height: 6.5625rem;
+  top: 0.7rem;
+  left: 0.7rem;
+  background-image: url("../walpaper/bg-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.images .border .data:hover {
+  transform: scale(0.95);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-image {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* other styles remain the same */
+.social {
+  position: absolute;
+  width: 50rem;
+  height: 10rem;
+  left: 7rem;
+  top: 26.3rem;
+}
+.social .border {
+  position: relative;
+  width: 7.9375rem;
+  height: 7.9375rem;
+  float: left;
+  margin-left: 1rem;
+  background-image: url("../img/border.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.social .border .icon {
+  position: absolute;
+  width: 2.375rem;
+  height: 2.375rem;
+  top: 2.5rem;
+  left: 3rem;
+  background-image: url("../img/web.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.social .border .name {
+  position: absolute;
+  width: 1.4375rem;
+  height: 0.875rem;
+  top: 6rem;
+  left: 2.5rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.text {
+  position: absolute;
+  top: 2.2rem;
+}
+.text .loading {
+  position: absolute;
+  width: 19.1875rem;
+  height: 5.3125rem;
+  left: 20.8125rem;
+  top: 11.5rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 4.4479rem;
+  line-height: 5.125rem;
+  color: #25FF96;
+  text-shadow: 0px 0px 215.842px #25FF96;
+}
+.text .description {
+  position: absolute;
+  width: 15rem;
+  height: 1.3125rem;
+  left: 21.3rem;
+  top: 17rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.112rem;
+  line-height: 1.3125rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+.text .description > p {
+  position: absolute;
+  width: 30.25rem;
+  height: 1.3125rem;
+  left: 0.4rem;
+  text-align: left;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.112rem;
+  line-height: 1.3125rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+.text > li {
+  position: absolute;
+  width: 12.3125rem;
+  height: 1.625rem;
+  left: 21.1831rem;
+  top: 9.8869rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.39rem;
+  line-height: 1.625rem;
+  color: #FFFFFF;
+}
+
+.updates-list {
+  position: absolute;
+  width: 40rem;
+  height: 14.7rem;
+  top: 44.3rem;
+  left: 7rem;
+  overflow-y: auto;
+}
+.updates-list .border {
+  position: relative;
+  width: 35.875rem;
+  height: 1.875rem;
+  background-image: url("../img/border-shadow.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: -0.03rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.updates-list .border > p {
+  position: absolute;
+  width: 12.9375rem;
+  height: 0.875rem;
+  font-family: "Gilroy-3";
+  font-style: normal;
+  left: 2.5rem;
+  top: -0.2rem;
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.load {
+  position: absolute;
+  top: 8rem;
+  left: 3.3rem;
+}
+.load > h1 {
+  position: absolute;
+  width: 2.8875rem;
+  height: 1.625rem;
+  top: 6.65rem;
+  left: 6.85rem;
+  font-family: "TT Norms Pro";
+  text-align: center;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3803rem;
+  line-height: 1.625rem;
+  color: #FFFFFF;
+}
+
+.settings-logo {
+  position: absolute;
+  width: 3rem;
+  height: 2.875rem;
+  left: 96.8125rem;
+  top: 4.1875rem;
+  background-image: url("../img/logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.settings-logo > h1 {
+  position: absolute;
+  width: 14.4375rem;
+  height: 2.5rem;
+  left: 3.5rem;
+  top: -0.65rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  background: radial-gradient(64.47% 64.47% at 50% 50%, #25FF96 0%, rgba(37, 255, 150, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 0px 172.3px #25FF96;
+}
+.settings-logo > p {
+  position: absolute;
+  width: 4.9375rem;
+  height: 1.3125rem;
+  top: -1.5rem;
+  left: 12.75rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.1096rem;
+  line-height: 1.25rem;
+  text-align: right;
+  color: #FFFFFF;
+}
+
+.selectedKeys {
+  box-sizing: border-box;
+  position: absolute;
+  width: 3.1875rem;
+  height: 3.1875rem;
+  left: 58.0625rem;
+  top: 29.4375rem;
+  border: 0.606299px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.selectedKeys > p {
+  position: absolute;
+  width: 1.375rem;
+  height: 2.5rem;
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.0979rem;
+  line-height: 2.5rem;
+  text-align: center;
+  background: radial-gradient(93.42% 93.42% at 50% 50%, #4AB3FF 0%, rgba(74, 179, 255, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.description {
+  position: absolute;
+  width: 53.1875rem;
+  height: 3.1875rem;
+  left: 61.6875rem;
+  top: 29.4375rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.description > p {
+  position: absolute;
+  width: 16.5625rem;
+  height: 0.875rem;
+  left: 1.5rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.server {
+  position: absolute;
+  width: 4rem;
+  height: 3.875rem;
+  left: 5rem;
+  top: 3.5rem;
+  background-image: url("../img/logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.server .name {
+  position: absolute;
+  width: 16.9375rem;
+  height: 2.5rem;
+  left: 3.7rem;
+  top: 1.5rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  background: radial-gradient(64.47% 64.47% at 50% 50%, #25FF96 0%, rgba(37, 255, 150, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 0px 64px #25FF96;
+}
+.server > p {
+  position: absolute;
+  width: 7.1875rem;
+  height: 1.25rem;
+  left: 3.9rem;
+  top: -0.6rem;
+  font-family: "Gilroy-2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.1096rem;
+  line-height: 1.25rem;
+  color: #FFFFFF;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (width: 4096px) and (height: 2160px) {
+  html {
+    font-size: 31px;
+  }
+}
+@media screen and (width: 2560px) and (height: 1440px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media screen and (width: 3440px) and (height: 1440px) {
+  html {
+    font-size: 22px;
+  }
+  .line .right {
+    left: 73%;
+  }
+}
+@media screen and (width: 1920px) and (height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1920px) and (height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1920px) and (height: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (width: 1440px) and (height: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (width: 1680px) and (height: 1050px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (width: 1600px) and (height: 900px) {
+  html {
+    font-size: 13.3px;
+  }
+}
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 13.3px;
+  }
+}
+@media screen and (width: 1768px) and (height: 992px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (width: 1366px) and (height: 768px) {
+  html {
+    font-size: 11.3px;
+  }
+}
+@media screen and (width: 1400px) and (height: 1050px) {
+  html {
+    font-size: 11.7px;
+  }
+}
+@media screen and (width: 1280px) and (height: 1024px) {
+  html {
+    font-size: 11.7px;
+  }
+}
+@media screen and (width: 1280px) and (height: 720px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (width: 1024px) and (height: 768px) {
+  html {
+    font-size: 10.05px;
+  }
+}
+@media screen and (width: 832px) and (height: 624px) {
+  html {
+    font-size: 8.05px;
+  }
+}
+@media screen and (width: 800px) and (height: 600px) {
+  html {
+    font-size: 8px;
+  }
+}/*# sourceMappingURL=app.css.map */

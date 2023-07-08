@@ -1,0 +1,5 @@
+Citizen.CreateThread(function()
+    Citizen.Wait(1000)
+    ShutdownLoadingScreenNui()
+    ShutdownLoadingScreen()
+end)
